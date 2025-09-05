@@ -1,4 +1,5 @@
 # CS 260 Notes
+Ok well i'm not sure whether to use this notes file or create a new one. This assignment I learned how to use git to push and pull code from github. All you have to say in the consol is git pull or git push. I learned how to edit within and github and within vs code and then how to update my local copy of the repository on vs code. I am now going to commit and push this to github.
 
 [My startup - Simon](https://simon.cs260.click)
 
