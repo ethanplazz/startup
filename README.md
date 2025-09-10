@@ -19,11 +19,11 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-Have you ever moved to a new place or traveled to a far away land and wanted to dip your line in the water while you're there but don't know how to effectively target the local species? You then spent a significant amount of time trying to research online and even using chatgpt which gave you questionable answers. Then once you're out there you catch nothing and wonder why. This app will solve all of those issues. This is the one stop shop for fishing the Provo river where you can select on an interactive map where you would like to go fishing and it will give you all of the accurate you info you need to have a successful day on the water such as location, fly selection, fishing technique, leader strength, and rod weight.
+Have you ever moved to a new place or traveled to a far away land and wanted to dip your line in the water while you're there but don't know how to effectively target the local species? You then spent a significant amount of time trying to research online and even using chatgpt which gave you questionable answers. Then once you're out there you catch nothing and wonder why. This app will solve all of those issues. This is the one stop shop for fishing the Provo river where you can select on an interactive map where you would like to go fishing and it will give you all of the accurate info you need to have a successful day on the water such as location, fly selection, fishing technique, leader strength, and rod weight.
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](FishingWebsitePicture.jpg)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
