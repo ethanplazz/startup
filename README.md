@@ -11,11 +11,11 @@ This app will assist fisherman on the who, what, when, where, how, and why of fi
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
@@ -29,20 +29,23 @@ Here is a drawing of what the different pages will look like on the web app.
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Interactive map of the river that you can click on
+- Secure login to your account through HTTPS
+- Info boxes with information on fish, flies, etc.
+- Image posting to share your fish
+- Commenting on posts
+- Up to date information
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Uses correct HTML structure for application. 4 HTML pages, the login page, the main page with the interactive map, the page that displays the information, and the page with the fish pictures.
+- **CSS** - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast. An interactive map that glows each section when you hover.
+- **React** - Will handle the functionality of displaying pop ups and pages of info, as well as the logic behind the interactive river map.
+- **Service** - Backend service with endpoints for login, posts, comments, etc.
+- **DB/Login** - This will store peoples logins, posts, and comments.
+- **WebSocket** - You will be able to communicate to others in real time through posting and commenting.
 
 ## 🚀 AWS deliverable
 
