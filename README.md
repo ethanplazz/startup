@@ -23,16 +23,9 @@ Have you ever moved to a new place or traveled to a far away land and wanted to 
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](images/FishingWebsitePicture.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
+Here is a drawing of what the different pages will look like on the web app.
 
 ### Key features
 
