@@ -1,7 +1,7 @@
 # CS 260 Notes
 Ok well i'm not sure whether to use this notes file or create a new one. This assignment I learned how to use git to push and pull code from github. All you have to say in the consol is git pull or git push. I learned how to edit within and github and within vs code and then how to update my local copy of the repository on vs code. I am now going to commit and push this to github.
 
-[My startup - Simon](https://simon.cs260.click)
+[My startup - Provo Fish Map](https://provofishmap.com)
 
 ## Helpful links
 
@@ -19,7 +19,7 @@ This was very cool, i've never done this before.
 
 ## Caddy
 
-No problems worked just like it said in the [instruction](https://github.com/webprogramming260/.github/blob/main/profile/webServers/https/https.md).
+Ok this step took me a while. So I followed all the steps and it seemed to be working fine in AWS. I got my domain name and chose the .com it was $15 a year but that's ok everyone knows .com. After putting in some records in my hosted zones that mapped my domain name to my ip address it took a while but it worked with http so not secure yet. I then was able to make it use HTTPS by ssh into my server and editing the caddyfile by putting my domain name into the ports. It was very hard to figure out the controls of vi just to edit and save that but I eventually figured it out. I then tested my domain name in the search bar and it worked and was secure so that's awesome. 
 
 ## HTML
 

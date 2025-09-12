@@ -1,4 +1,4 @@
-# Provo River Fishing Report
+# Provo Fish Map
 
 [My Notes](notes.md)
 
