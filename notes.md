@@ -11,8 +11,11 @@ Ok well i'm not sure whether to use this notes file or create a new one. This as
 
 ## AWS
 
-My IP address is: 54.81.96.130
-Launching my AMI I initially put it on a private subnet. Even though it had a public IP address and the security group was right, I wasn't able to connect to it. Ok this is my second edit of all time.
+My IP address is: 44.192.207.47
+Ok I just launched/started my first web server through AWS. Here is the current link that will take you there: http://44.192.207.47/
+It had a different public ip address at first but then I allocated an elastic ip address to it so it will always stay with this even if the server isn't running or something. I also learned today how to ssh into the server so it pulled up the console terminal for the server on my laptop and i'm able to make edits and such. This was the command to do it:
+ssh -i C:\Users\plast\OneDrive\Desktop\Homework\HorsePics.pem ubuntu@44.192.207.47
+This was very cool, i've never done this before.
 
 ## Caddy
 
