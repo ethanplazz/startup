@@ -23,9 +23,7 @@ Ok this step took me a while. So I followed all the steps and it seemed to be wo
 
 ## HTML
 
-This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
-
-The part I didn't like was the duplication of the header and footer code. This is messy, but it will get cleaned up when I get to React.
+Ok i'm writing this before I actually start any HTML. We went over it a little in class but I have never touched it before. I am kind of confused at how CSS works within HTML as a seperate language or something? I guess I'll figure it out. I will mess around with the simon html files and I will watch some tutorials and practice it so I can get a sound understanding of it. 
 
 ## CSS
 
