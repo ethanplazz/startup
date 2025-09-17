@@ -51,7 +51,7 @@ I am going to use the required technologies in the following ways.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Server deployed and accessible with custom domain name** - [My server link](https://yourdomainnamehere.click).
+- [x] **Server deployed and accessible with custom domain name** - [My server link](https://startup.provofishmap.com/). Most of the notes on what I did are in my notes file. I succesfully deployed my web server which is physically in northen virginia. I assigned it an elastic IP and then attached that to my domain name provofishmap.com - I then ssh into the server from my laptop and used vi to edit the caddy file so the ports trying to be accessed will rerout to my website and will also use HTTPS so it is secure and it handles all that for me. So now you can go to my website securely and right now it only shows the content that was predownloaded from an AWS image I think. My next move will be to edit my startup html and push it into the server using a shell script written for me so that the website will display whatever I write and not what was preinstalled. 
 
 ## 🚀 HTML deliverable
 
