@@ -25,6 +25,8 @@ Ok this step took me a while. So I followed all the steps and it seemed to be wo
 
 Ok i'm writing this before I actually start any HTML. We went over it a little in class but I have never touched it before. I am kind of confused at how CSS works within HTML as a seperate language or something? I guess I'll figure it out. I will mess around with the simon html files and I will watch some tutorials and practice it so I can get a sound understanding of it. 
 
+Ok I just learned about kind of the structure of html. I learned about several elements within html for example body, header, footer, main, section, aside, p, table, ol/ul, div, and span. It all starts with a body that has 3 parts: header, main, and footer. All the other elements work within those elements. I was able to edit some things such as text and added an a tag which is an anchor element to add links. I also added an image element using an img tag which i guess is self closing so you don't have to add a closing tag like most others i've seen. You can navigate to image with filepath if you have it or a website url with it and it will work. I added a width attribute on the image tag to correctly size the image, it will automatically adjust height so you only have to do width. I added an h1 element using that same tag it goes in the header it basically makes a big header. I am kind of understanding the structure now but I'm sure I will get better with more practice. Hello.
+
 ## CSS
 
 This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
