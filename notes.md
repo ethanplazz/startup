@@ -31,6 +31,16 @@ Ok I just learned about kind of the structure of html. I learned about several e
 
 I just did my first ever practice with css and it's great. I am understanding the concept of essentially just selecting what you want to edit and then applying things to it. For example you could have a block that styles the whole body, a block that styles only tables, only sections, it can be anything. You can also name an element so you can only edit that specific element with css. You can do all sorts of things with color, size, alignment, backgrounds, borders, etc. 
 
+## Deploying to Server
+
+Alright holy cow that was confusing to just deploy the simon html to my subdomain simon.provofishmap.com. I cloned the repository and took a look at everything and went live with live server to see what it looked like. After that I attempted to figure out how to word the commands properly to use the shell script to deploy it all. It wasn't working in my windows terminal so I asked chatgpt what I was doing wrong and it had me do it in my gitbash one. I rightclicked on the folder with everything I wanted to deploy which was simon html and then chose open with gitbash. I then essentially typed in the same command but slightly different. I had to change the path to my pem key because it wanted it linux style apparently. So after I ran that it worked. I then ssh into my server to reboot it using `sudo reboot`. Then I exited and let it sit a minute and I typed in simon.provofishmap.com and it worked so that was awesome. So the process was go to the file I want to deploy the contents to the server, right click, open with git bash. Type this command:
+`bash deployFiles.sh -k /c/Users/plast/OneDrive/Desktop/Homework/HorsePics.pem -h simon.provofishmap.com -s simon`
+But if i'm doing my startup I type
+`bash deployFiles.sh -k /c/Users/plast/OneDrive/Desktop/Homework/HorsePics.pem -h startup.provofishmap.com -s starup`
+Then it should work and then all I have to is ssh in in the same terminal using this command:
+`ssh -i /c/Users/plast/OneDrive/Desktop/Homework/HorsePics.pem ubuntu@simon.provofishmap.com`
+But again change it to startup if I'm doing that. Then I type `sudo reboot` and then `exit` and give it a minute and it should be good to go.
+
 ## React Part 1: Routing
 
 Setting up Vite and React was pretty simple. I had a bit of trouble because of conflicting CSS. This isn't as straight forward as you would find with Svelte or Vue, but I made it work in the end. If there was a ton of CSS it would be a real problem. It sure was nice to have the code structured in a more usable way.
