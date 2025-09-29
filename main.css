@@ -1,10 +1,14 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: lightcoral;
+  margin: 0;
+  line-height: 1.6;
 }
 
 header {
     background-color: lightgreen;
+    padding: 20px;
+    text-align: center;
 }
 
 nav ul {
