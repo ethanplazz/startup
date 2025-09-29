@@ -11,6 +11,12 @@ header {
     text-align: center;
 }
 
+h1 {
+  font-size: 3rem;
+  margin: 0;         
+  font-weight: bold; 
+}
+
 nav ul {
   display: flex;
   justify-content: center;
