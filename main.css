@@ -41,7 +41,7 @@ nav a:hover {
   background-color: #555;
 }
 
-main, footer, p, img {
+main, p, img {
   display: block;
   max-width: 900px;
   margin: 20px auto;
@@ -87,5 +87,22 @@ button:hover {
   background: mediumseagreen;
   color: white;
 }
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: white;
+}
+
+footer a {
+  color: lightgreen;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 
 
