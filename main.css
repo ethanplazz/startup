@@ -40,3 +40,11 @@ nav a {
 nav a:hover {
   background-color: #555;
 }
+
+main, footer, p, img {
+  display: block;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
