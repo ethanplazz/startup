@@ -18,6 +18,10 @@ h1 {
   font-weight: bold; 
 }
 
+h2 {
+  text-align: center;
+}
+
 nav ul {
   display: inline-flex;     
   justify-content: center;

@@ -68,6 +68,10 @@ main {
   margin: 0 auto;         
 }
 
+h2 {
+  text-align: center;
+}
+
 main section {
   background: white;
   border: 1px solid #ccc;
