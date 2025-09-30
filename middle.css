@@ -47,12 +47,32 @@ nav a:hover {
   background-color: #555;
 }
 
-main, p, img {
+p, img {
   display: block;
   max-width: 900px;
   margin: 20px auto;
   padding: 0 20px;
 }
+
+main {
+  display: flex;
+  flex-wrap: wrap;      
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;      
+  margin: 0 auto;         
+}
+
+main section {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 250px;     
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 
 form {
   background: white;
