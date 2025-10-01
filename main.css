@@ -98,6 +98,50 @@ button:hover {
   color: white;
 }
 
+.map-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.map-image {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.map-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0, 123, 255, 0.7);
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.map-btn:hover {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
+  transform: scale(1.1);
+}
+
+.lower {
+  top: 80%;
+  left: 15%;
+}
+
+.middle {
+  top: 40%;
+  left: 38%;
+}
+
+.upper {
+  top: 23%;
+  left: 60%;
+}
+
+
 footer {
   text-align: center;
   padding: 15px;
