@@ -31,7 +31,7 @@ I just did a bunch of html for this first startup html assignment. Although it f
 
 ## CSS
 
-I just did my first ever practice with css and it's great. I am understanding the concept of essentially just selecting what you want to edit and then applying things to it. For example you could have a block that styles the whole body, a block that styles only tables, only sections, it can be anything. You can also name an element so you can only edit that specific element with css. You can do all sorts of things with color, size, alignment, backgrounds, borders, etc. 
+I just did my first ever practice with css and it's great. I am understanding the concept of essentially just selecting what you want to edit and then applying things to it. For example you could have a block that styles the whole body, a block that styles only tables, only sections, it can be anything. You can also name an element so you can only edit that specific element with css. You can do all sorts of things with color, size, alignment, backgrounds, borders, etc. I have been doing a lot of css for this next deliverable. I like assigning everything a class in my html so I can just edit that specifically using a hashtag in my css because once the file starts getting long then certain things start to override each other especially if my html isn't the best.  
 
 ## Deploying to Server
 

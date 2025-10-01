@@ -57,26 +57,26 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] **HTML pages** - I created 6 html pages: a home page, lower, middle, and upper provo river info pages, an about page, and a community page where you can post.
+- [x] **Proper HTML element usage** - I used the proper elements and structure in each of my pages such as unordered lists, paragraphs, headers, sections, and divs.
+- [x] **Links** - Each navigation button links to another of my html pages so they all work.
+- [x] **Text** - I have text on every single page.
+- [x] **3rd party API placeholder** - My picture in about is a placeholder I want it to show a random fish picture everytime.
+- [x] **Images** - I have images on every page as well.
+- [x] **Login placeholder** - I pulled the login from simon and put it on my home page.
+- [x] **DB data placeholder** - I have a place for posting pictures and displaying your username.
+- [x] **WebSocket placeholder** - When people post it should show up on everyones page.
 
 ## 🚀 CSS deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- [x] **Header, footer, and main content body** - I styled the header and footer to be the same on every page and the main body for most has everything centered.
+- [x] **Navigation elements** - I have navigation links at the top of every page and they look nice.
+- [x] **Responsive to window resizing** - I used flex to make everything responsive.
+- [x] **Application elements** - I styled the sections on each info page to look like cards so it is more organized, I did the same with the login feature and the posts, they all look like cards so it's organized.
+- [x] **Application text content** - I made the font uniform with font and color for the whole website. 
+- [x] **Application images** - I resized the images to fit properly and adapt to window sizing.
 
 ## 🚀 React part 1: Routing deliverable
 
