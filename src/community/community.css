@@ -6,56 +6,65 @@ body {
 }
 
 header {
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
 }
 
 h1 {
   color: white;
   font-size: 3rem;
-  margin: 0;         
-  font-weight: bold; 
+  margin: 0;
+  font-weight: bold;
 }
 
 h2 {
   text-align: center;
+  margin-top: 20px;
 }
 
 nav ul {
-  display: inline-flex;     
+  display: inline-flex;
   justify-content: center;
   padding: 6px 12px;
   margin: 0 auto;
   background-color: #666;
   border-radius: 6px;
-  list-style: none; 
+  list-style: none;
 }
 
 nav li {
-  margin: 0;               
+  margin: 0;
 }
 
-nav li:last-child a {
-  border-right: none;   
+nav li:last-child .nav-link {
+  border-right: none;
 }
 
-nav a {
+.nav-link {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  font-size: 0.9rem;     
-  padding: 4px 8px;  
+  font-size: 0.9rem;
+  padding: 4px 8px;
   display: block;
   transition: background 0.3s;
   border-right: 1px solid #999;
 }
 
-nav a:hover {
+.nav-link:hover,
+.nav-link.active {
   background-color: #555;
 }
 
-main, p, img {
+main {
+  display: block;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+p, img {
   display: block;
   max-width: 900px;
   margin: 20px auto;
@@ -66,7 +75,7 @@ form {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   margin: 20px auto;
   display: flex;
@@ -74,14 +83,12 @@ form {
   gap: 10px;
 }
 
-form div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+label {
+  font-weight: bold;
 }
 
-input {
-  flex: 1;
+input[type="file"],
+textarea {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -118,7 +125,7 @@ button:hover {
   background: white;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
