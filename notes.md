@@ -45,7 +45,7 @@ But again change it to startup if I'm doing that. Then I type `sudo reboot` and 
 
 ## React Part 1: Routing
 
-Setting up Vite and React was pretty simple. I had a bit of trouble because of conflicting CSS. This isn't as straight forward as you would find with Svelte or Vue, but I made it work in the end. If there was a ton of CSS it would be a real problem. It sure was nice to have the code structured in a more usable way.
+This one took forever but I will try to recount what I did. I just had to follow the instructions and the video very carefully. So I first downloaded vite, bootstrap, and react. I then started organizing my files differently by putting each page in there own folder in a src folder. I then created a new index.html and changed my other one to a login page. I gave each view a jsx file and also made an app jsx file. 
 
 ## React Part 2: Reactivity
 

@@ -82,9 +82,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - I did not complete this part of the deliverable.
+- [x] **Bundled using Vite** - I used vite to bundle my react code so it turns into javascript on the website and makes a nice local website that constantly updates instead of live server.
+- [x] **Components** - I created a component for each of my past pages so they aren't actually html pages anymore they are react components.
+- [x] **Router** - I put the router in my main jsx file so it knows I have multiple views and will change it when it needs to instead of reloading the page everytime.
 
 ## 🚀 React part 2: Reactivity deliverable
 
