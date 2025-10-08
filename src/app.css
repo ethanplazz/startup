@@ -36,7 +36,8 @@ nav li:last-child a {
   border-right: none;   
 }
 
-nav a {
+nav a,
+nav .nav-link {
   text-decoration: none;
   color: white;
   font-weight: bold;
