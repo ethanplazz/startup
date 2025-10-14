@@ -4,6 +4,9 @@ import './middle.css';
 export function Middle() {
   return (
     <main className='middle-page'>
+      <header>
+        <h1>The Middle Provo River</h1>
+      </header>
       <img
         src="https://norrik.com/wp-content/uploads/2023/02/middle-provo-river-fly-fisherman-below-jordanelle-reservoir.jpg"
         alt="Middle Provo River Picture"

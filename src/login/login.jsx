@@ -3,6 +3,9 @@ import React from 'react';
 export function Login() {
   return (
     <main>
+      <header>
+        <h1>Login</h1>
+      </header>
       <form method="get" action="community.html">
         <div>
           <span>@</span>

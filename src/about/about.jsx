@@ -4,6 +4,9 @@ import './about.css';
 export function About() {
   return (
     <main className='about-page'>
+      <header>
+        <h1>About the Author</h1>
+      </header>
       <img
         src="https://www.ginkandgasoline.com/wp-content/uploads/2016/02/DSC_5533-2.jpg"
         alt="Fly fishing on the Provo River"

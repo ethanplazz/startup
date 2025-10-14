@@ -5,6 +5,9 @@ import './lower.css';
 export function Lower() {
   return (
     <main className='lower-page'>
+      <header>
+        <h1>The Lower Provo River</h1>
+      </header>
       <img
         src="https://thewickedfly.com/wp-content/uploads/2019/11/lowerprovo_gephardt-daily.jpg"
         alt="Lower Provo River Picture"

@@ -4,6 +4,9 @@ import './upper.css';
 export function Upper() {
   return (
     <main className='upper-page'>
+      <header>
+        <h1>The Upper Provo River</h1>
+      </header>
       <img
         src="https://www.fishwest.com/Images/Content/fw/cpflk/_O_R4676-450x300.jpg"
         alt="Upper Provo River Picture"
