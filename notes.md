@@ -47,6 +47,8 @@ But again change it to startup if I'm doing that. Then I type `sudo reboot` and 
 
 This one took forever but I will try to recount what I did. I just had to follow the instructions and the video very carefully. So I first downloaded vite, bootstrap, and react. I then started organizing my files differently by putting each page in there own folder in a src folder. I then created a new index.html and changed my other one to a login page. I gave each view a jsx file and also made an app jsx file. 
 
+Ok I think i'm finally starting to understand react a little, at least the css part. The app.jsx will show all the time but if you click the links it will route you to the other jsx pages. The app.css is the styling that will apply to everything so for this you should include things that will stay the same across all pages such as header and footer styling, paragraphs, forms, etc. You can also add a css file to any other page you want if it has uniqe styles so you don't want to the universal css to apply. Today I did a lot of editing and figured that out. 
+
 ## React Part 2: Reactivity
 
 This was a lot of fun to see it all come together. I had to keep remembering to use React state instead of just manipulating the DOM directly.
