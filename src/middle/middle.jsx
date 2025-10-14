@@ -3,7 +3,7 @@ import './middle.css';
 
 export function Middle() {
   return (
-    <main>
+    <main className='middle-page'>
       <img
         src="https://norrik.com/wp-content/uploads/2023/02/middle-provo-river-fly-fisherman-below-jordanelle-reservoir.jpg"
         alt="Middle Provo River Picture"
@@ -11,56 +11,76 @@ export function Middle() {
 
       <section id="what-you-can-catch">
         <h2>What You Can Catch</h2>
-        <p>Rainbow trout, Brown trout, Cutthroat trout, Mountain Whitefish</p>
+        <ul>
+          <li>Rainbow trout</li>
+          <li>Brown trout</li>
+          <li>Cutthroat trout</li>
+          <li>Mountain Whitefish</li>
+        </ul>
       </section>
 
       <section id="where-you-can-go">
         <h2>Where You Can Go</h2>
-        <p>
-          The Middle Provo River, stretching between Jordanelle Dam and Deer Creek
-          Reservoir, is one of Utah’s most famous blue-ribbon trout fisheries and
-          offers abundant public access along its banks. Popular entry points include
-          Legacy Bridge near the Jordanelle tailwater, which provides year-round cold
-          flows ideal for rainbow and brown trout, and the River Road Trail area,
-          where miles of accessible river wind through scenic farmland and meadows.
-          Other excellent spots include Bunny Farm, Charleston Bridge, and the Midway
-          Lane access points, all known for consistent hatches and productive
-          fly-fishing. The LDS Church fields access and several pull-offs along River
-          Road also allow anglers to spread out and find less pressured water. With
-          consistent flows, diverse insect life, and healthy fish populations, the
-          Middle Provo is considered the crown jewel of the river system, though it
-          can become busy, especially during peak hatch seasons.
-        </p>
+        <ul>
+          <li>
+            <strong>Legacy Bridge (below Jordanelle Dam):</strong> Year-round cold
+            flows ideal for rainbow and brown trout.
+          </li>
+          <li>
+            <strong>River Road Trail area:</strong> Miles of accessible river winding
+            through farmland and meadows.
+          </li>
+          <li>
+            <strong>Bunny Farm, Charleston Bridge, Midway Lane:</strong> Consistent
+            hatches and highly productive fly-fishing.
+          </li>
+          <li>
+            <strong>LDS Church fields and River Road pull-offs:</strong> Great options
+            for spreading out and finding less pressured water.
+          </li>
+          <li>
+            <strong>Overall:</strong> The Middle Provo is considered the crown jewel of
+            the river system, though it can get busy during peak hatch seasons.
+          </li>
+        </ul>
       </section>
 
       <section id="what-you-can-use">
         <h2>What You Can Use</h2>
-        <p>Fly fishing</p>
+        <ul>
+          <li>Fly fishing gear (nymphs, dry flies, streamers)</li>
+        </ul>
       </section>
 
       <section id="how-you-can-do-it">
         <h2>How You Can Do It</h2>
-        <p>Euro nymphing</p>
+        <ul>
+          <li>Euro nymphing techniques</li>
+          <li>Dry-dropper rigs</li>
+          <li>Streamer fishing during low light</li>
+        </ul>
       </section>
 
       <section id="regulations">
         <h2>Regulations</h2>
-        <p>
-          The Provo River is managed as a blue-ribbon fishery, and anglers should be
-          aware of special regulations that vary by section. Throughout much of the
-          river—especially the popular Middle Provo and Lower Provo stretches—
-          artificial flies and lures only are allowed, which means bait fishing is
-          prohibited. There are also size and harvest limits in place to protect the
-          trout populations: typically, only a small number of trout may be kept, and
-          many stretches are catch-and-release for certain species, especially brown
-          and rainbow trout. The Upper Provo, by contrast, has more general
-          regulations and allows bait in some areas, though limits still apply.
-          Statewide rules, such as requiring a valid Utah fishing license and
-          following daily bag limits, apply to all sections. Because regulations can
-          change from year to year, anglers should always check the latest Utah
-          Division of Wildlife Resources (UDWR) fishing guidebook before heading out
-          to ensure they’re in compliance.
-        </p>
+        <ul>
+          <li>Artificial flies and lures only — no bait fishing allowed.</li>
+          <li>
+            Catch-and-release rules for many sections, especially for brown and rainbow
+            trout.
+          </li>
+          <li>
+            The Upper Provo allows bait in some stretches but still follows statewide
+            limits.
+          </li>
+          <li>
+            A valid Utah fishing license is required for all anglers.
+          </li>
+          <li>
+            Always check the latest Utah Division of Wildlife Resources (UDWR) fishing
+            guidebook for up-to-date regulations.
+          </li>
+        </ul>
       </section>
     </main>
   );
