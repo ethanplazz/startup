@@ -1,4 +1,4 @@
-main {
+.lower-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,7 @@ main {
   background-color: lightcoral;
 }
 
-main section {
+.lower-page section {
   background: white;
   border: 1px solid #ccc;
   border-radius: 12px;
@@ -19,26 +19,26 @@ main section {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-main section ul {
+.lower-page section ul {
   list-style-type: disc;
   padding-left: 1.5rem;
   margin-top: 10px;
   text-align: left;
 }
 
-main section li {
+.lower-page section li {
   color: black;
   margin-bottom: 8px;
   line-height: 1.5;
 }
 
-h2 {
+.lower-page h2 {
   color: black;
   text-align: center;
   margin-top: 0;
 }
 
-img {
+.lower-page img {
   display: block;
   width: 100%;
   max-width: 900px;
@@ -47,7 +47,7 @@ img {
   border-radius: 8px;
 }
 
-p {
+.lower-page p {
   max-width: 900px;
   margin: 20px auto;
   padding: 0 20px;
