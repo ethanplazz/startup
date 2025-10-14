@@ -3,7 +3,7 @@ import './community.css';
 
 export function Community() {
   return (
-    <main>
+    <main className='community-page'>
       <header>
         <h1>Community Fish Posts</h1>
       </header>
