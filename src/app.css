@@ -9,6 +9,7 @@ header {
     background-color: #333;
     padding: 20px;
     text-align: center;
+    border-radius: 12px;
 }
 
 h1 {
@@ -60,6 +61,7 @@ main, p, img {
 }
 
 form {
+  color: black;
   background: white;
   padding: 20px;
   border-radius: 8px;
