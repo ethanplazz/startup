@@ -73,6 +73,19 @@ main section {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+main section ul {
+  list-style-type: disc;       
+  padding-left: 1.5rem;        
+  margin-top: 10px;            
+  text-align: left;            
+}
+
+main section li {
+  color: black;
+  margin-bottom: 8px;          
+  line-height: 1.5;            
+}
+
 h2 {
   color: black;
   text-align: center;

@@ -12,61 +12,88 @@ export function Lower() {
 
       <section id="what-you-can-catch">
         <h2>What You Can Catch</h2>
-        <p>Rainbow trout, Brown trout, Cutthroat trout, Mountain Whitefish</p>
+        <ul>
+          <li>Rainbow Trout</li>
+          <li>Brown Trout</li>
+          <li>Cutthroat Trout</li>
+          <li>Mountain Whitefish</li>
+        </ul>
       </section>
 
       <section id="where-you-can-go">
         <h2>Where You Can Go</h2>
-        <p>
-          The Lower Provo River offers many excellent fishing spots with
-          convenient public access. Just below Deer Creek Dam you’ll find
-          productive water, though access can be steep, with improvements
-          underway. Popular stops in Provo Canyon include the Olmstead Diversion
-          Dam, Vivian Park, Upper Falls Park, Nunn’s Park, and Canyon View Park,
-          all of which provide good opportunities for trout fishing, especially
-          browns and rainbows. Smaller access points like Ron Last Park, the
-          Frazier pull-off at milepost 12.7, and two additional primitive
-          pull-offs along the highway also give anglers direct entry to the
-          river. On the south side of the road near Deer Creek Park, you’ll find
-          another reliable access area. Further downstream, the Provo River
-          Parkway and city parks provide shoreline access closer to town, while
-          the river mouth at Utah Lake State Park shifts the fishing toward
-          warm-water species such as bass, carp, and catfish. Anglers should
-          keep in mind that the riverbed itself is public, but some adjacent
-          land is private, so it’s important to avoid trespassing when
-          approaching the water.
-        </p>
+        <ul>
+          <li>
+            Just below <strong>Deer Creek Dam</strong> — productive water but steep access
+            (improvements underway)
+          </li>
+          <li>
+            <strong>Provo Canyon:</strong> Olmstead Diversion Dam, Vivian Park, Upper Falls Park,
+            Nunn’s Park, and Canyon View Park — great for brown and rainbow trout
+          </li>
+          <li>
+            <strong>Smaller access points:</strong> Ron Last Park, the Frazier pull-off (milepost 12.7),
+            and two additional primitive pull-offs along the highway
+          </li>
+          <li>
+            <strong>South side of the road near Deer Creek Park</strong> — another reliable access area
+          </li>
+          <li>
+            <strong>Further downstream:</strong> Provo River Parkway and city parks offer shoreline access
+            closer to town
+          </li>
+          <li>
+            <strong>Utah Lake State Park (river mouth):</strong> shifts to warm-water fishing —
+            bass, carp, and catfish
+          </li>
+          <li>
+            Remember: the <strong>riverbed is public</strong>, but adjacent land may be private —
+            avoid trespassing
+          </li>
+        </ul>
       </section>
 
       <section id="what-you-can-use">
         <h2>What You Can Use</h2>
-        <p>Fly fishing</p>
+        <ul>
+          <li>Fly fishing gear</li>
+          <li>Nymphs and streamers</li>
+          <li>Dry flies for surface action</li>
+        </ul>
       </section>
 
       <section id="how-you-can-do-it">
         <h2>How You Can Do It</h2>
-        <p>Euro nymphing</p>
+        <ul>
+          <li>Euro nymphing for deep, fast runs</li>
+          <li>Indicator nymphing in slower pools</li>
+          <li>Streamer fishing for aggressive brown trout</li>
+          <li>Dry fly fishing during hatches</li>
+        </ul>
       </section>
 
       <section id="regulations">
         <h2>Regulations</h2>
-        <p>
-          The Provo River is managed as a blue-ribbon fishery, and anglers
-          should be aware of special regulations that vary by section.
-          Throughout much of the river—especially the popular Middle Provo and
-          Lower Provo stretches—artificial flies and lures only are allowed,
-          which means bait fishing is prohibited. There are also size and
-          harvest limits in place to protect the trout populations: typically,
-          only a small number of trout may be kept, and many stretches are
-          catch-and-release for certain species, especially brown and rainbow
-          trout. The Upper Provo, by contrast, has more general regulations and
-          allows bait in some areas, though limits still apply. Statewide rules,
-          such as requiring a valid Utah fishing license and following daily bag
-          limits, apply to all sections. Because regulations can change from
-          year to year, anglers should always check the latest Utah Division of
-          Wildlife Resources (UDWR) fishing guidebook before heading out to
-          ensure they’re in compliance.
-        </p>
+        <ul>
+          <li>
+            The Provo River is managed as a <strong>blue-ribbon fishery</strong> — special rules apply
+          </li>
+          <li>
+            <strong>Artificial flies and lures only</strong> — bait fishing prohibited on most stretches
+          </li>
+          <li>
+            <strong>Catch-and-release</strong> for certain species (especially brown and rainbow trout)
+          </li>
+          <li>
+            <strong>Upper Provo:</strong> more general regulations; bait allowed in some areas
+          </li>
+          <li>
+            <strong>Valid Utah fishing license</strong> required at all times
+          </li>
+          <li>
+            Always check the latest <strong>UDWR fishing guidebook</strong> for current regulations
+          </li>
+        </ul>
       </section>
     </main>
   );
