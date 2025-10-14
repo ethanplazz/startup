@@ -18,7 +18,7 @@ export function Login() {
 
       <div className="map-container">
         <img
-          src="public/prmap.jpg"
+          src="/prmap.jpg"
           alt="Provo River Map Placeholder"
           className="map-image"
         />

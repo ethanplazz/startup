@@ -30,7 +30,7 @@ export function Community() {
         <h2>Latest Posts</h2>
         <article className="post">
           <img
-            src="public/MeWithSalmon.jpg"
+            src="/MeWithSalmon.jpg"
             alt="A beautiful PB fish"
           />
           <p className="caption">
