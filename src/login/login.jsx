@@ -1,8 +1,9 @@
 import React from 'react';
+import './login.css';
 
 export function Login() {
   return (
-    <main>
+    <main className='login-page'>
       <header>
         <h1>Login</h1>
       </header>
