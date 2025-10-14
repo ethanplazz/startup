@@ -3,7 +3,7 @@ import './upper.css';
 
 export function Upper() {
   return (
-    <main>
+    <main className='upper-page'>
       <img
         src="https://www.fishwest.com/Images/Content/fw/cpflk/_O_R4676-450x300.jpg"
         alt="Upper Provo River Picture"
@@ -11,57 +11,79 @@ export function Upper() {
 
       <section id="what-you-can-catch">
         <h2>What You Can Catch</h2>
-        <p>Rainbow trout, Brown trout, Cutthroat trout, Brook trout, Mountain Whitefish</p>
+        <ul>
+          <li>Rainbow trout</li>
+          <li>Brown trout</li>
+          <li>Cutthroat trout</li>
+          <li>Brook trout</li>
+          <li>Mountain Whitefish</li>
+        </ul>
       </section>
 
       <section id="where-you-can-go">
         <h2>Where You Can Go</h2>
-        <p>
-          The Upper Provo River, flowing from the Uinta Mountains down toward Jordanelle
-          Reservoir, offers a more remote and scenic fishing experience compared to the
-          middle and lower sections. Popular access points include stretches along the
-          Mirror Lake Highway (Hwy 150), where numerous pull-offs and campgrounds provide
-          easy entry to the river. Up high, near Soapstone Basin and Woodland, anglers can
-          find brook trout, cutthroat trout, and smaller browns in fast, freestone water.
-          Further upstream in the headwaters and meadow sections, such as around Mirror
-          Lake, Trial Lake, and Lilly Lake, fishing tends to be smaller in size but
-          abundant, making it a great spot for light tackle or fly fishing with dry flies.
-          The river here is highly seasonal, with peak flows in late spring from snowmelt
-          and more approachable water levels in late summer and fall. While fish in the
-          Upper Provo are typically smaller than those found in the middle and lower
-          stretches, the combination of wild trout, solitude, and high alpine scenery
-          makes this section a favorite for anglers seeking a true mountain stream
-          experience.
-        </p>
+        <ul>
+          <li>
+            <strong>Mirror Lake Highway (Hwy 150):</strong> Numerous pull-offs and
+            campgrounds offering easy access to the river.
+          </li>
+          <li>
+            <strong>Soapstone Basin and Woodland:</strong> Great for brook, cutthroat,
+            and smaller brown trout in fast, freestone water.
+          </li>
+          <li>
+            <strong>Headwaters and meadows:</strong> Around Mirror Lake, Trial Lake,
+            and Lilly Lake — smaller fish but high catch rates and great dry fly action.
+          </li>
+          <li>
+            <strong>Best seasons:</strong> Peak flows in late spring from snowmelt;
+            best fishing in late summer and fall.
+          </li>
+          <li>
+            <strong>Overall:</strong> Smaller fish but unmatched solitude and alpine
+            scenery — ideal for a true mountain stream experience.
+          </li>
+        </ul>
       </section>
 
       <section id="what-you-can-use">
         <h2>What You Can Use</h2>
-        <p>Fly fishing</p>
+        <ul>
+          <li>Fly fishing gear (dry flies, nymphs, small streamers)</li>
+          <li>Light spinning tackle for brook trout and cutthroat</li>
+        </ul>
       </section>
 
       <section id="how-you-can-do-it">
         <h2>How You Can Do It</h2>
-        <p>Euro nymphing</p>
+        <ul>
+          <li>Dry fly fishing in meadow sections during hatches</li>
+          <li>Euro nymphing or tight-line nymphing in faster currents</li>
+          <li>Small stream tactics — stealth and short, accurate casts</li>
+        </ul>
       </section>
 
       <section id="regulations">
         <h2>Regulations</h2>
-        <p>
-          The Provo River is managed as a blue-ribbon fishery, and anglers should be aware
-          of special regulations that vary by section. Throughout much of the river—
-          especially the popular Middle Provo and Lower Provo stretches—artificial flies
-          and lures only are allowed, which means bait fishing is prohibited. There are
-          also size and harvest limits in place to protect the trout populations:
-          typically, only a small number of trout may be kept, and many stretches are
-          catch-and-release for certain species, especially brown and rainbow trout. The
-          Upper Provo, by contrast, has more general regulations and allows bait in some
-          areas, though limits still apply. Statewide rules, such as requiring a valid
-          Utah fishing license and following daily bag limits, apply to all sections.
-          Because regulations can change from year to year, anglers should always check
-          the latest Utah Division of Wildlife Resources (UDWR) fishing guidebook before
-          heading out to ensure they’re in compliance.
-        </p>
+        <ul>
+          <li>
+            The Upper Provo generally allows bait fishing in some areas, unlike the
+            Middle and Lower sections.
+          </li>
+          <li>
+            Artificial flies and lures only in special regulation stretches.
+          </li>
+          <li>
+            Catch-and-release encouraged to protect native trout populations.
+          </li>
+          <li>
+            Valid Utah fishing license required at all times.
+          </li>
+          <li>
+            Always check the latest Utah Division of Wildlife Resources (UDWR)
+            fishing guidebook before fishing.
+          </li>
+        </ul>
       </section>
     </main>
   );
