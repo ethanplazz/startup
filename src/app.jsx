@@ -66,7 +66,6 @@ export default function App() {
               </li>
             </ul>
           </nav>
-          <hr />
         </header>
 
         <Routes>
