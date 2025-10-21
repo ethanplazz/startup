@@ -22,7 +22,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="body bg-dark text-light">
-        <header>
+        <header className="mainheader">
           <h1>Provo Fish Map</h1>
           <nav>
             <ul>

@@ -8,12 +8,6 @@
   margin: 0 auto;
 }
 
-.login-page header {
-  background-color: #333;
-  padding: 20px;
-  text-align: center;
-}
-
 .login-page form div {
   display: flex;
   align-items: center;
