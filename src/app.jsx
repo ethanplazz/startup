@@ -102,9 +102,8 @@ export default function App() {
         </Routes>
 
         <footer>
-          <hr />
           <span className="text-reset">Ethan Plaster</span>
-          <br />
+          <span>© 2025 Provo Fish Map. Ya I reserved these rights.</span>
           <a href="https://github.com/ethanplazz/startup.git">GitHub</a>
         </footer>
       </div>
