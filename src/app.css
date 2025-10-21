@@ -3,9 +3,9 @@
   background-color: lightcoral;
   margin: 0;
   line-height: 1.6;
-  min-height: 100vh;  /* Add this - makes it at least full viewport height */
-  display: flex;       /* Add this */
-  flex-direction: column;  /* Add this */
+  min-height: 100vh;
+  display: flex;      
+  flex-direction: column; 
 }
 
 header.mainheader {
@@ -16,10 +16,11 @@ header.mainheader {
 
 h1 {
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 0;         
   font-weight: bold; 
   border-radius: 12x;
+  padding: 6px 12px;
 }
 
 nav ul {
@@ -155,7 +156,7 @@ footer {
   padding: 10px 20px;
   background: #333;
   color: white;
-  margin-top: auto;  /* Add this - pushes footer to bottom */
+  margin-top: auto;
 }
 
 footer a {

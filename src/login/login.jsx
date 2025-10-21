@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 export function Login({ isLoggedIn, onLogin }) {
+  const navigate = useNavigate();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const handleLogin = (event) => {
@@ -10,6 +12,7 @@ export function Login({ isLoggedIn, onLogin }) {
       alert('Please enter both email and password');
       return;
     }
+
     onLogin();
   };
 
@@ -36,9 +39,21 @@ export function Login({ isLoggedIn, onLogin }) {
             alt="Provo River Map Placeholder"
             className="map-image"
           />
-          <button className="map-btn lower" title="Lower Provo"></button>
-          <button className="map-btn middle" title="Middle Provo"></button>
-          <button className="map-btn upper" title="Upper Provo"></button>
+          <button 
+            className="map-btn lower" 
+            title="Lower Provo"
+            onClick={() => navigate('/lower')}
+          ></button>
+          <button 
+            className="map-btn middle" 
+            title="Middle Provo"
+            onClick={() => navigate('/middle')}
+          ></button>
+          <button 
+            className="map-btn upper" 
+            title="Upper Provo"
+            onClick={() => navigate('/upper')}
+          ></button>
         </div>
 
         <p>
