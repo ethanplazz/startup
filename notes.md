@@ -51,29 +51,8 @@ Ok I think i'm finally starting to understand react a little, at least the css p
 
 ## React Part 2: Reactivity
 
-This was a lot of fun to see it all come together. I had to keep remembering to use React state instead of just manipulating the DOM directly.
+Ok this has been somewhat difficult, javascript is getting better and better for me but I am unfamiliar with most of the syntax so lot's of google searches and some AI have been helping me to accomplish what I want to accomplish.  
 
-Handling the toggling of the checkboxes was particularly interesting.
-
-```jsx
-<div className="input-group sound-button-container">
-  {calmSoundTypes.map((sound, index) => (
-    <div key={index} className="form-check form-switch">
-      <input
-        className="form-check-input"
-        type="checkbox"
-        value={sound}
-        id={sound}
-        onChange={() => togglePlay(sound)}
-        checked={selectedSounds.includes(sound)}
-      ></input>
-      <label className="form-check-label" htmlFor={sound}>
-        {sound}
-      </label>
-    </div>
-  ))}
-</div>
-```
 ## Midterm Notes
 
 1. What does the <link> element do?
