@@ -74,3 +74,183 @@ Handling the toggling of the checkboxes was particularly interesting.
   ))}
 </div>
 ```
+## Midterm Notes
+
+1. What does the <link> element do?
+It connects an external resource to the HTML document — most commonly an external CSS file.
+<link rel="stylesheet" href="styles.css">
+
+2. Div is a generic container in html,
+
+3. Difference between #title and .grid selector
+#title selects an element with id="title" (IDs are unique).
+.grid selects all elements with class="grid". (CSS)
+
+4. Difference between padding and margin
+Padding: space inside the element, between content and border.
+Margin: space outside the element, between border and neighboring elements.
+
+7. const add = (a, b) => a + b;
+Defines a function that takes two parameters and returns their sum.
+
+8. What does this code using map() output?
+const nums = [1, 2, 3];
+const doubled = nums.map(n => n * 2);
+console.log(doubled);
+Output: [2, 4, 6]
+
+10. What does this line using a # selector do?
+document.querySelector("#title").textContent = "Hello";
+Selects the element with id="title" and sets its text to “Hello”.
+
+11. Which of the following are true about the DOM?
+The DOM represents the structure of an HTML document as a tree of objects. True
+You can use JavaScript to access and modify elements in the DOM. True
+
+12. Default display property of <span>
+inline
+
+13. How to make all <div> elements have a red background in CSS
+div {
+  background-color: red;
+}
+
+14. How to display an image with a hyperlink
+<a href="https://byuh.edu">
+  <img src="logo.png" alt="BYUH Logo">
+</a>
+
+15. CSS box model order (inside → out)
+Content → Padding → Border → Margin
+
+16. Set only the word “trouble” to green
+<p><span class="green">trouble</span>double</p>
+.green {
+  color: green;
+}
+
+17. What will this code output with a for loop?
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+Output:
+0
+1
+2
+
+18. Change element with id “byu” text color to green
+document.getElementById("byu").style.color = "green";
+
+19. Opening HTML tags
+
+Paragraph → <p>
+
+Ordered list → <ol>
+
+Unordered list → <ul>
+
+Second level heading → <h2>
+
+First level heading → <h1>
+
+Third level heading → <h3>
+
+20. Declare document type to be HTML
+<!DOCTYPE html>
+
+21. Valid JavaScript syntax for control structures
+if (x > 0) { ... }
+else { ... }
+
+for (let i = 0; i < 5; i++) { ... }
+
+while (condition) { ... }
+
+switch (value) {
+  case 1: ...; break;
+  default: ...;
+}
+
+22. Correct syntax for creating a JavaScript object
+const person = { name: "Ethan", age: 22 };
+
+23. Can you add new properties to JavaScript objects?
+Yes
+person.job = "Developer";
+
+24. Tag to include JavaScript in HTML
+<script src="script.js"></script>
+or inline
+<script>
+  console.log("Hello");
+</script>
+
+25. Change text “animal” to “crow” and leave “fish” unaffected
+<p id="bird">animal</p>
+<p>fish</p>
+<script>
+document.getElementById("bird").textContent = "crow";
+</script>
+
+26. Which correctly describes JSON?
+JavaScript Object Notation — a lightweight data format using key/value pairs.
+{ "name": "Ethan", "age": 22 }
+
+27. What do these console commands do?
+
+chmod — change file permissions
+
+pwd — print working directory
+
+cd — change directory
+
+ls — list files
+
+vim / nano — text editors
+
+mkdir — make directory
+
+mv — move or rename files
+
+rm — remove files
+
+man — show manual/help
+
+ssh — connect securely to remote server
+
+ps — show running processes
+
+wget — download files from the web
+
+sudo — run command as superuser (admin)
+
+29. What happens with ls -la?
+Lists all files (including hidden) in long format with permissions and details.
+
+30. Domain name structure for banana.fruit.bozo.click
+
+Top-level domain (TLD): click
+
+Root domain: bozo.click
+
+Subdomain: banana.fruit.bozo.click (with banana and fruit as subdomains)
+
+31. Is a web certificate necessary to use HTTPS?
+Yes, HTTPS requires a valid SSL/TLS certificate.
+
+32. Can a DNS A record point to an IP address or another A record?
+It can point to an IP address, not another A record (only CNAME can point to another record).
+
+33. Reserved ports
+
+443 → HTTPS
+
+80 → HTTP
+
+22 → SSH
+
+34. What will code using Promises output?
+const p = new Promise(resolve => resolve("Done"));
+p.then(result => console.log(result));
+Output:
+Done
