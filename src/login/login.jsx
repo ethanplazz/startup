@@ -1,41 +1,82 @@
 import React from 'react';
 import './login.css';
 
-export function Login() {
+export function Login({ isLoggedIn, onLogin }) {
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const handleLogin = (event) => {
+    event.preventDefault();
+    if (!email || !password) {
+      alert('Please enter both email and password');
+      return;
+    }
+    onLogin();
+  };
+
+  const handleCreateAccount = (event) => {
+    event.preventDefault();
+    if (!email || !password) {
+      alert('Please enter both email and password');
+      return;
+    }
+
+    onLogin();
+  };
+
+  if (isLoggedIn) {
+    return (
+      <main className='login-page'>
+        <header>
+          <h1>Welcome!</h1>
+        </header>
+
+        <div className="map-container">
+          <img
+            src="/prmap.jpg"
+            alt="Provo River Map Placeholder"
+            className="map-image"
+          />
+          <button className="map-btn lower" title="Lower Provo"></button>
+          <button className="map-btn middle" title="Middle Provo"></button>
+          <button className="map-btn upper" title="Upper Provo"></button>
+        </div>
+
+        <p>
+          Welcome to my website. Here you will be able to interact with this map
+          and learn how to fish each section of the Provo River so that you can
+          have a great and successful day out on the water!
+        </p>
+      </main>
+    );
+  }
+
   return (
     <main className='login-page'>
       <header>
         <h1>Login</h1>
       </header>
-      <form method="get" action="community.html">
+      <form>
         <div>
           <span>@</span>
-          <input type="text" placeholder="your@email.com" />
+          <input 
+            type="text" 
+            placeholder="your@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div>
           <span>🔒</span>
-          <input type="password" placeholder="password" />
+          <input 
+            type="password" 
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
-        <button type="submit">Login</button>
-        <button type="submit">Create an Account</button>
+        <button type="button" onClick={handleLogin}>Login</button>
+        <button type="button" onClick={handleCreateAccount}>Create an Account</button>
       </form>
-
-      <div className="map-container">
-        <img
-          src="/prmap.jpg"
-          alt="Provo River Map Placeholder"
-          className="map-image"
-        />
-        <button className="map-btn lower" title="Lower Provo"></button>
-        <button className="map-btn middle" title="Middle Provo"></button>
-        <button className="map-btn upper" title="Upper Provo"></button>
-      </div>
-
-      <p>
-        Welcome to my website. Here you will be able to interact with this map
-        and learn how to fish each section of the Provo River so that you can
-        have a great and successful day out on the water!
-      </p>
     </main>
   );
 }
