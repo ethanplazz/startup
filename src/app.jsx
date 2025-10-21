@@ -8,6 +8,7 @@ import { Middle } from './middle/middle';
 import { Upper } from './upper/upper';
 import { About } from './about/about';
 import { Community } from './community/community';
+import FishClickEffect from './FishClickEffect';
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -21,6 +22,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <FishClickEffect />
       <div className="body bg-dark text-light">
         <header className="mainheader">
           <h1>Provo Fish Map</h1>
