@@ -91,7 +91,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [x] **All functionality implemented or mocked out** - Yes I implimented functionality for my login page, it works but everything is saved locally so not fully functional yet. Same goes for my community page, you can post images and captions but nothing stays if you reload the page. Also the buttons on my map route to their respective pages. I also made every mouse click shoot little fish emojis out of it. 
-- [x] **Hooks** - Yes I used all react hooks especially usestate, I used that for login authentication. I also used those for my posts on my community page. 
+- [x] **Hooks** - Yes I used all react hooks especially usestate, I used that for login authentication. I also used those for my posts on my community page. I used use effect for my fish click effects thing.
 
 ## 🚀 Service deliverable
 
