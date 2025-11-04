@@ -13,6 +13,9 @@ app.use(express.static('public'));
 
 const users = {};
 const authTokens = {};
+const posts = [];
+
+const ADMIN_USERS = ['your_username_here'];
 
 app.post('/api/auth/register', async (req, res) => {
   const { username, password } = req.body;
@@ -75,7 +78,10 @@ app.get('/api/auth/user', (req, res) => {
   const username = authTokens[token];
   
   if (username) {
-    res.json({ username });
+    res.json({ 
+      username,
+      isAdmin: ADMIN_USERS.includes(username)
+    });
   } else {
     res.status(401).json({ msg: 'Not authenticated' });
   }
@@ -93,30 +99,46 @@ function requireAuth(req, res, next) {
   next();
 }
 
-app.get('/api/scores', requireAuth, (req, res) => {
-  const scores = [
-    { username: req.username, score: 100 },
-    { username: 'player2', score: 95 },
-    { username: 'player3', score: 87 }
-  ];
-  res.json(scores);
+app.get('/api/posts', (req, res) => {
+  res.json(posts);
 });
 
-app.post('/api/scores', requireAuth, (req, res) => {
-  const { score } = req.body;
+app.post('/api/posts', requireAuth, (req, res) => {
+  const { imageUrl, caption } = req.body;
   
-  const newScore = {
+  if (!imageUrl || !caption) {
+    return res.status(400).json({ msg: 'Image URL and caption required' });
+  }
+  
+  const newPost = {
+    id: uuid(),
     username: req.username,
-    score,
+    imageUrl,
+    caption,
     timestamp: new Date().toISOString()
   };
   
-  res.json(newScore);
+  posts.unshift(newPost);
+  res.json(newPost);
 });
 
-
-app.get('/api/test', (req, res) => {
-  res.json({ msg: 'Backend is working!' });
+app.delete('/api/posts/:id', requireAuth, (req, res) => {
+  const postId = req.params.id;
+  const postIndex = posts.findIndex(p => p.id === postId);
+  
+  if (postIndex === -1) {
+    return res.status(404).json({ msg: 'Post not found' });
+  }
+  
+  const isAdmin = ADMIN_USERS.includes(req.username);
+  const isOwner = posts[postIndex].username === req.username;
+  
+  if (!isOwner && !isAdmin) {
+    return res.status(403).json({ msg: 'Not authorized to delete this post' });
+  }
+  
+  posts.splice(postIndex, 1);
+  res.status(204).end();
 });
 
 app.listen(port, () => {
