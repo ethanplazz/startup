@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import { BrowserRouter, NavLink, Route, Routes, Navigate } from 'react-router-dom';
+import { getCurrentUser, logout } from './api';
 import { Login } from './login/login';
 import { Lower } from './lower/lower';
 import { Middle } from './middle/middle';
@@ -11,14 +12,27 @@ import { Community } from './community/community';
 import FishClickEffect from './FishClickEffect';
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
+  const [currentUser, setCurrentUser] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
+  React.useEffect(() => {
+    checkAuth();
+  }, []);
+
+  async function checkAuth() {
+    const user = await getCurrentUser();
+    setCurrentUser(user);
+    setLoading(false);
+  }
+
+  async function handleLogout() {
+    await logout();
+    setCurrentUser(null);
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <BrowserRouter>
@@ -30,12 +44,12 @@ export default function App() {
             <ul>
               <li>
                 <NavLink className="nav-link" to="">
-                  {isLoggedIn ? 'Welcome' : 'Login'}
+                  {currentUser ? 'Welcome' : 'Login'}
                 </NavLink>
               </li>
               
               {/* Only show these links when logged in */}
-              {isLoggedIn && (
+              {currentUser && (
                 <>
                   <li>
                     <NavLink className="nav-link" to="lower">
@@ -66,34 +80,53 @@ export default function App() {
                   About
                 </NavLink>
               </li>
+
+              {/* Logout button when logged in */}
+              {currentUser && (
+                <li>
+                  <button 
+                    className="nav-link" 
+                    onClick={handleLogout}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      color: 'inherit',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    Logout
+                  </button>
+                </li>
+              )}
             </ul>
           </nav>
         </header>
 
         <Routes>
-          {/* Pass isLoggedIn and handleLogin to Login component */}
+          {/* Pass currentUser and setCurrentUser to Login */}
           <Route 
             path='/' 
-            element={<Login isLoggedIn={isLoggedIn} onLogin={handleLogin} />} 
+            element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} 
             exact 
           />
           
           {/* Protected routes - redirect to login if not logged in */}
           <Route 
             path='/lower' 
-            element={isLoggedIn ? <Lower /> : <Navigate to="/" />} 
+            element={currentUser ? <Lower /> : <Navigate to="/" />} 
           />
           <Route 
             path='/middle' 
-            element={isLoggedIn ? <Middle /> : <Navigate to="/" />} 
+            element={currentUser ? <Middle /> : <Navigate to="/" />} 
           />
           <Route 
             path='/upper' 
-            element={isLoggedIn ? <Upper /> : <Navigate to="/" />} 
+            element={currentUser ? <Upper /> : <Navigate to="/" />} 
           />
           <Route 
             path='/community' 
-            element={isLoggedIn ? <Community /> : <Navigate to="/" />} 
+            element={currentUser ? <Community currentUser={currentUser} /> : <Navigate to="/" />} 
           />
           
           {/* About is always accessible */}
