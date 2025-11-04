@@ -15,7 +15,7 @@ const users = {};
 const authTokens = {};
 const posts = [];
 
-const ADMIN_USERS = ['your_username_here'];
+const ADMIN_USERS = ['eplazz'];
 
 app.post('/api/auth/register', async (req, res) => {
   const { username, password } = req.body;
