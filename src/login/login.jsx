@@ -1,36 +1,57 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { login, register } from '../api';
 import './login.css';
 
-export function Login({ isLoggedIn, onLogin }) {
+export function Login({ currentUser, setCurrentUser }) {
   const navigate = useNavigate();
-  const [email, setEmail] = React.useState('');
+  const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const handleLogin = (event) => {
+  const [error, setError] = React.useState('');
+  const [isRegistering, setIsRegistering] = React.useState(false);
+
+  const handleLogin = async (event) => {
     event.preventDefault();
-    if (!email || !password) {
-      alert('Please enter both email and password');
+    setError('');
+
+    if (!username || !password) {
+      setError('Please enter both username and password');
       return;
     }
 
-    onLogin();
+    try {
+      const userData = await login(username, password);
+      setCurrentUser(userData);
+      navigate('/lower');
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
-  const handleCreateAccount = (event) => {
+  const handleCreateAccount = async (event) => {
     event.preventDefault();
-    if (!email || !password) {
-      alert('Please enter both email and password');
+    setError('');
+
+    if (!username || !password) {
+      setError('Please enter both username and password');
       return;
     }
 
-    onLogin();
+    try {
+      const userData = await register(username, password);
+      setCurrentUser(userData);
+      navigate('/lower'); 
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
-  if (isLoggedIn) {
+  if (currentUser) {
     return (
       <main className='login-page'>
         <header>
-          <h1>Welcome!</h1>
+          <h1>Welcome, {currentUser.username}!</h1>
+          {currentUser.isAdmin && <span style={{color: 'gold'}}> (Admin)</span>}
         </header>
 
         <div className="map-container">
@@ -68,16 +89,16 @@ export function Login({ isLoggedIn, onLogin }) {
   return (
     <main className='login-page'>
       <header>
-        <h1>Login</h1>
+        <h1>{isRegistering ? 'Create Account' : 'Login'}</h1>
       </header>
       <form>
         <div>
-          <span>@</span>
+          <span>👤</span>
           <input 
             type="text" 
-            placeholder="your@email.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div>
@@ -89,8 +110,24 @@ export function Login({ isLoggedIn, onLogin }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="button" onClick={handleLogin}>Login</button>
-        <button type="button" onClick={handleCreateAccount}>Create an Account</button>
+        
+        {error && <p style={{color: 'red', marginTop: '10px'}}>{error}</p>}
+        
+        {isRegistering ? (
+          <>
+            <button type="button" onClick={handleCreateAccount}>Create Account</button>
+            <button type="button" onClick={() => setIsRegistering(false)}>
+              Back to Login
+            </button>
+          </>
+        ) : (
+          <>
+            <button type="button" onClick={handleLogin}>Login</button>
+            <button type="button" onClick={() => setIsRegistering(true)}>
+              Create an Account
+            </button>
+          </>
+        )}
       </form>
     </main>
   );
