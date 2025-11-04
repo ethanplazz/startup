@@ -40,35 +40,51 @@ export async function logout() {
 }
 
 export async function getCurrentUser() {
-  const response = await fetch('/api/auth/user');
-  
-  if (!response.ok) {
+  try {
+    const response = await fetch('/api/auth/user');
+    
+    if (!response.ok) {
+      return null;
+    }
+    
+    return await response.json();
+  } catch (error) {
     return null;
   }
-  
-  return await response.json();
 }
 
-export async function getScores() {
-  const response = await fetch('/api/scores');
+export async function getPosts() {
+  const response = await fetch('/api/posts');
   
   if (!response.ok) {
-    throw new Error('Failed to fetch scores');
+    throw new Error('Failed to fetch posts');
   }
   
   return await response.json();
 }
 
-export async function submitScore(score) {
-  const response = await fetch('/api/scores', {
+export async function createPost(imageUrl, caption) {
+  const response = await fetch('/api/posts', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ score })
+    body: JSON.stringify({ imageUrl, caption })
   });
   
   if (!response.ok) {
-    throw new Error('Failed to submit score');
+    const error = await response.json();
+    throw new Error(error.msg);
   }
   
   return await response.json();
+}
+
+export async function deletePost(postId) {
+  const response = await fetch(`/api/posts/${postId}`, {
+    method: 'DELETE'
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.msg);
+  }
 }
