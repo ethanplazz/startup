@@ -48,7 +48,6 @@ export default function App() {
                 </NavLink>
               </li>
               
-              {/* Only show these links when logged in */}
               {currentUser && (
                 <>
                   <li>
@@ -74,14 +73,12 @@ export default function App() {
                 </>
               )}
               
-              {/* About is always visible */}
               <li>
                 <NavLink className="nav-link" to="about">
                   About
                 </NavLink>
               </li>
 
-              {/* Logout button when logged in */}
               {currentUser && (
                 <li>
                   <button 
@@ -104,14 +101,12 @@ export default function App() {
         </header>
 
         <Routes>
-          {/* Pass currentUser and setCurrentUser to Login */}
           <Route 
             path='/' 
             element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} 
             exact 
           />
           
-          {/* Protected routes - redirect to login if not logged in */}
           <Route 
             path='/lower' 
             element={currentUser ? <Lower /> : <Navigate to="/" />} 
@@ -129,7 +124,6 @@ export default function App() {
             element={currentUser ? <Community currentUser={currentUser} /> : <Navigate to="/" />} 
           />
           
-          {/* About is always accessible */}
           <Route path='/about' element={<About />} />
           
           <Route path='*' element={<NotFound />} />
