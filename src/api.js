@@ -89,31 +89,29 @@ export async function deletePost(postId) {
   }
 }
 
-export async function getRandomFishImage() {
+export async function getRandomQuote() {
   try {
-    
-    const response = await fetch('https://api.unsplash.com/photos/random?query=fish&client_id=demo');
+
+    const randomId = Math.floor(Math.random() * 100) + 1;
+    const response = await fetch(`https://dummyjson.com/quotes/${randomId}`);
     
     if (!response.ok) {
-      const fallbackImages = [
-        'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=800',
-        'https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=800',
-        'https://images.unsplash.com/photo-1524704654690-b56c05c78a00?w=800'
-      ];
-      const randomIndex = Math.floor(Math.random() * fallbackImages.length);
-      return { url: fallbackImages[randomIndex], alt: 'Fish' };
+      throw new Error('Failed to fetch quote');
     }
     
     const data = await response.json();
     return {
-      url: data.urls.regular,
-      alt: data.alt_description || 'Fish',
-      photographer: data.user.name
+      content: data.quote,
+      author: data.author
     };
   } catch (error) {
-    return {
-      url: 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=800',
-      alt: 'Fish'
-    };
+    console.log('Using fallback quote:', error);
+    const fallbackQuotes = [
+      { content: "The charm of fishing is that it is the pursuit of what is elusive but attainable.", author: "John Buchan" },
+      { content: "Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime.", author: "Maimonides" },
+      { content: "There's a fine line between fishing and just standing on the shore like an idiot.", author: "Steven Wright" }
+    ];
+    const randomIndex = Math.floor(Math.random() * fallbackQuotes.length);
+    return fallbackQuotes[randomIndex];
   }
 }
