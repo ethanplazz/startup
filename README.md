@@ -97,13 +97,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
-
+- [x] **Node.js/Express HTTP service** - I created a backend express server that runs on port 4000 which is my index.js file.
+- [x] **Static middleware for frontend** - Yes my express server now serves the react components when deployed.
+- [x] **Calls to third party endpoints** - Yes it makes an http request to DummyJSON which gives me a random quote every time I open the about page.
+- [x] **Backend service endpoints** - Yes I created 7 different endpoints that handle registration, login, logout, getting user info, viewing posts, creating posts, and deleting posts.
+- [x] **Frontend calls service endpoints** - Yes I have many methods in my api file that are called by my login and community pages.
+- [x] **Supports registration, login, logout, and restricted endpoint** - Yes users can now create an account and login and before you are logged in you can only access about page but once you are logged in you can access everything.
 
 ## 🚀 DB deliverable
 

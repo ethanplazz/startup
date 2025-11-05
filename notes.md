@@ -233,3 +233,6 @@ const p = new Promise(resolve => resolve("Done"));
 p.then(result => console.log(result));
 Output:
 Done
+
+## Service Notes
+Ok so to my understanding I created an express backend server on port 4000 so it's always listening even though this isn't an official database it stores files locally but if I update it all of the data will be wiped. 
