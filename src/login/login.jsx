@@ -22,7 +22,7 @@ export function Login({ currentUser, setCurrentUser }) {
     try {
       const userData = await login(username, password);
       setCurrentUser(userData);
-      navigate('/lower');
+      navigate('/');
     } catch (err) {
       setError(err.message);
     }
@@ -40,7 +40,7 @@ export function Login({ currentUser, setCurrentUser }) {
     try {
       const userData = await register(username, password);
       setCurrentUser(userData);
-      navigate('/lower'); 
+      navigate('/'); 
     } catch (err) {
       setError(err.message);
     }
