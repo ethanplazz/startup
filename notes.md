@@ -236,3 +236,6 @@ Done
 
 ## Service Notes
 Ok so to my understanding I created an express backend server on port 4000 so it's always listening even though this isn't an official database it stores files locally but if I update it all of the data will be wiped. 
+
+## Database Notes
+Alright I successfully created my mongodb account and started a free database with like 500 megabytes of storage which isn't a lot but it will do for free. I installed mongodb with npm install and then created a database file which has all of the mongodb commands in it so I can use them. I then changed index so instead of saving everything locally there it uses the mongo commands to send the data there and back and hash it along the way.

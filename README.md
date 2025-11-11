@@ -108,9 +108,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
-
+- [x] **Stores data in MongoDB** - Yes I created a database file that stores all of the mongodb commands so those are used to store my data in my database instead of local storage.
+- [x] **Stores credentials in MongoDB** - Yes I store the username and a hashed password using bcrypt so it is jumbled.
 ## 🚀 WebSocket deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
