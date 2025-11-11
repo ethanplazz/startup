@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const { v4: uuid } = require('uuid');
+const DB = require('./database.js');
 
 const app = express();
 
@@ -10,10 +11,6 @@ const port = process.argv.length > 2 ? process.argv[2] : 4000;
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('public'));
-
-const users = {};
-const authTokens = {};
-const posts = [];
 
 const ADMIN_USERS = ['eplazz'];
 
@@ -24,29 +21,21 @@ app.post('/api/auth/register', async (req, res) => {
     return res.status(400).json({ msg: 'Username and password required' });
   }
 
-  if (users[username]) {
+  const existingUser = await DB.getUser(username);
+  if (existingUser) {
     return res.status(409).json({ msg: 'Username already exists' });
   }
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-  
-  users[username] = {
-    username,
-    password: hashedPassword
-  };
+  const user = await DB.createUser(username, password);
 
-  const token = uuid();
-  authTokens[token] = username;
-
-  res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'strict' });
-  
-  res.json({ username });
+  res.cookie('token', user.token, { httpOnly: true, secure: true, sameSite: 'strict' });
+  res.json({ username: user.username });
 });
 
 app.post('/api/auth/login', async (req, res) => {
   const { username, password } = req.body;
 
-  const user = users[username];
+  const user = await DB.getUser(username);
   if (!user) {
     return res.status(401).json({ msg: 'Invalid username or password' });
   }
@@ -56,54 +45,58 @@ app.post('/api/auth/login', async (req, res) => {
     return res.status(401).json({ msg: 'Invalid username or password' });
   }
 
-  const token = uuid();
-  authTokens[token] = username;
+  user.token = uuid();
+  await DB.updateUser(user);
 
-  res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'strict' });
-  
-  res.json({ username });
+  res.cookie('token', user.token, { httpOnly: true, secure: true, sameSite: 'strict' });
+  res.json({ username: user.username });
 });
 
-app.delete('/api/auth/logout', (req, res) => {
+app.delete('/api/auth/logout', async (req, res) => {
   const token = req.cookies.token;
-  if (token) {
-    delete authTokens[token];
+  const user = await DB.getUserByToken(token);
+  
+  if (user) {
+    delete user.token;
+    await DB.updateUser(user);
   }
+  
   res.clearCookie('token');
   res.status(204).end();
 });
 
-app.get('/api/auth/user', (req, res) => {
+app.get('/api/auth/user', async (req, res) => {
   const token = req.cookies.token;
-  const username = authTokens[token];
+  const user = await DB.getUserByToken(token);
   
-  if (username) {
+  if (user) {
     res.json({ 
-      username,
-      isAdmin: ADMIN_USERS.includes(username)
+      username: user.username,
+      isAdmin: ADMIN_USERS.includes(user.username)
     });
   } else {
     res.status(401).json({ msg: 'Not authenticated' });
   }
 });
 
-function requireAuth(req, res, next) {
+async function requireAuth(req, res, next) {
   const token = req.cookies.token;
-  const username = authTokens[token];
+  const user = await DB.getUserByToken(token);
   
-  if (!username) {
+  if (!user) {
     return res.status(401).json({ msg: 'Not authenticated' });
   }
   
-  req.username = username;
+  req.username = user.username;
   next();
 }
 
-app.get('/api/posts', (req, res) => {
+app.get('/api/posts', async (req, res) => {
+  const posts = await DB.getAllPosts();
   res.json(posts);
 });
 
-app.post('/api/posts', requireAuth, (req, res) => {
+app.post('/api/posts', requireAuth, async (req, res) => {
   const { imageUrl, caption } = req.body;
   
   if (!imageUrl || !caption) {
@@ -118,26 +111,27 @@ app.post('/api/posts', requireAuth, (req, res) => {
     timestamp: new Date().toISOString()
   };
   
-  posts.unshift(newPost);
+  await DB.addPost(newPost);
   res.json(newPost);
 });
 
-app.delete('/api/posts/:id', requireAuth, (req, res) => {
+app.delete('/api/posts/:id', requireAuth, async (req, res) => {
   const postId = req.params.id;
-  const postIndex = posts.findIndex(p => p.id === postId);
+  const posts = await DB.getAllPosts();
+  const post = posts.find(p => p.id === postId);
   
-  if (postIndex === -1) {
+  if (!post) {
     return res.status(404).json({ msg: 'Post not found' });
   }
   
   const isAdmin = ADMIN_USERS.includes(req.username);
-  const isOwner = posts[postIndex].username === req.username;
+  const isOwner = post.username === req.username;
   
   if (!isOwner && !isAdmin) {
     return res.status(403).json({ msg: 'Not authorized to delete this post' });
   }
   
-  posts.splice(postIndex, 1);
+  await DB.deletePost(postId);
   res.status(204).end();
 });
 
