@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const { v4: uuid } = require('uuid');
 const DB = require('./database.js');
+const WebSocket = require('ws');
 
 const app = express();
 
@@ -14,6 +15,38 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 const ADMIN_USERS = ['eplazz'];
+
+const wss = new WebSocket.Server({ port: 9090 });
+const clients = new Set();
+
+wss.on('connection', (ws) => {
+  console.log('New WebSocket client connected');
+  clients.add(ws);
+
+  ws.on('close', () => {
+    console.log('WebSocket client disconnected');
+    clients.delete(ws);
+  });
+
+  ws.on('error', (error) => {
+    console.error('WebSocket error:', error);
+    clients.delete(ws);
+  });
+});
+
+function broadcastUserActivity(type, username) {
+  const message = JSON.stringify({
+    type: type,
+    username: username,
+    timestamp: new Date().toISOString()
+  });
+
+  clients.forEach((client) => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(message);
+    }
+  });
+}
 
 app.post('/api/auth/register', async (req, res) => {
   const { username, password } = req.body;
@@ -28,6 +61,8 @@ app.post('/api/auth/register', async (req, res) => {
   }
 
   const user = await DB.createUser(username, password);
+
+  broadcastUserActivity('user-signup', user.username);
 
   res.cookie('token', user.token, { httpOnly: true, secure: true, sameSite: 'strict' });
   res.json({ username: user.username });
@@ -48,6 +83,8 @@ app.post('/api/auth/login', async (req, res) => {
 
   user.token = uuid();
   await DB.updateUser(user);
+
+  broadcastUserActivity('user-login', user.username);
 
   res.cookie('token', user.token, { httpOnly: true, secure: true, sameSite: 'strict' });
   res.json({ username: user.username });
@@ -138,35 +175,5 @@ app.delete('/api/posts/:id', requireAuth, async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
+  console.log(`WebSocket server running on port 9090`);
 });
-
-const WebSocket = require('ws');
-
-const wss = new WebSocket.Server({ port: 9090 });
-
-const clients = new Set();
-
-wss.on('connection', (ws) => {
-  console.log('New WebSocket client connected');
-  clients.add(ws);
-
-  ws.on('close', () => {
-    clients.delete(ws);
-  });
-});
-
-function broadcastUserActivity(type, username) {
-  const message = JSON.stringify({
-    type: type,
-    username: username,
-    timestamp: new Date().toISOString()
-  });
-
-  clients.forEach((client) => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(message);
-    }
-  });
-}
-
-module.exports = { broadcastUserActivity };
