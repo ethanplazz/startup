@@ -139,3 +139,34 @@ app.delete('/api/posts/:id', requireAuth, async (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({ port: 9090 });
+
+const clients = new Set();
+
+wss.on('connection', (ws) => {
+  console.log('New WebSocket client connected');
+  clients.add(ws);
+
+  ws.on('close', () => {
+    clients.delete(ws);
+  });
+});
+
+function broadcastUserActivity(type, username) {
+  const message = JSON.stringify({
+    type: type,
+    username: username,
+    timestamp: new Date().toISOString()
+  });
+
+  clients.forEach((client) => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(message);
+    }
+  });
+}
+
+module.exports = { broadcastUserActivity };
