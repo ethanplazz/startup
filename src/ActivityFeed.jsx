@@ -1,4 +1,4 @@
-import { useWebSocket } from '../hooks/useWebSocket';
+import { useWebSocket } from './hooks/useWebSocket';
 
 export default function ActivityFeed() {
   const { activities, isConnected } = useWebSocket();
