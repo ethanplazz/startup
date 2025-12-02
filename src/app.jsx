@@ -10,6 +10,7 @@ import { Upper } from './upper/upper';
 import { About } from './about/about';
 import { Community } from './community/community';
 import FishClickEffect from './FishClickEffect';
+import ActivityFeed from './ActivityFeed';
 
 export default function App() {
   const [currentUser, setCurrentUser] = React.useState(null);
@@ -128,6 +129,18 @@ export default function App() {
           
           <Route path='*' element={<NotFound />} />
         </Routes>
+
+        {/* Activity Feed - Fixed position, visible when logged in */}
+        {currentUser && (
+          <div style={{ 
+            position: 'fixed', 
+            bottom: '80px',
+            right: '20px', 
+            zIndex: 1000 
+          }}>
+            <ActivityFeed />
+          </div>
+        )}
 
         <footer>
           <span className="text-reset">Ethan Plaster</span>
