@@ -114,8 +114,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [x] **Backend listens for WebSocket connection** - Yes in my index.js file I set it up to accept websocket connections by listening on port 9090.
+- [x] **Frontend makes WebSocket connection** - Yes my react app connects to the websocket server and that is done in useWebsocket.jsx.
+- [x] **Data sent over WebSocket connection** - Yes this happens in my backend in index.js it sends notifications to all connected clients. 
+- [x] **WebSocket data displayed** - Yes the data recieved is actually shown on the screen because of useWebsocket.jsx and activityfeed.jsx.
+- [x] **Application is fully functional** - Yes everything works as it should!

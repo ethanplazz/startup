@@ -239,3 +239,6 @@ Ok so to my understanding I created an express backend server on port 4000 so it
 
 ## Database Notes
 Alright I successfully created my mongodb account and started a free database with like 500 megabytes of storage which isn't a lot but it will do for free. I installed mongodb with npm install and then created a database file which has all of the mongodb commands in it so I can use them. I then changed index so instead of saving everything locally there it uses the mongo commands to send the data there and back and hash it along the way.
+
+## Websocket Notes
+Ok I successfully created my websocket so that whenever someone logs in or creates a new account everyone whos logged in on the website gets a little message in real time that they did. This is done in a little activity box on the side of the screen. 
