@@ -7,7 +7,7 @@ export function useWebSocket() {
   useEffect(() => {
     const wsUrl = window.location.hostname === 'localhost' 
       ? 'ws://localhost:9090'
-      : `wss://${window.location.hostname}:9090`;
+      : `wss://${window.location.hostname}/ws`;
 
     console.log('Connecting to WebSocket:', wsUrl);
     const ws = new WebSocket(wsUrl);
